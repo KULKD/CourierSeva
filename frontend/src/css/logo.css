@@ -1,0 +1,43 @@
+.logo {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    z-index: 0;
+   
+  }
+
+  .logologin {
+    position: absolute;
+    left: 100px;
+    top: 0px;
+    
+    z-index: 0;
+   
+  }
+
+  .logosignup
+  {
+    position: absolute;
+    left: 150px;
+   
+    bottom: 500px;
+    
+    z-index: 0;
+  }
+
+
+  .cardlogin
+  {
+    position:absolute;
+   
+    left:900px;
+   
+    bottom:600px;
+   
+    top: -800px;
+    
+    z-index: 1;
+    border-radius: 25px;
+    
+  
+  }
