@@ -40,7 +40,7 @@ public class UserController {
 
 	// for customer  register
 	@PostMapping("register")
-	@Operation(summary = "Api to register customer or restaurant user")
+	@Operation(summary = "Api to register customer ")
 	public ResponseEntity<CommonApiResponse> registerUser(@RequestBody RegisterUserRequestDto request) {
 		return this.userResource.registerUser(request);
 	}
