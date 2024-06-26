@@ -306,7 +306,7 @@ public class CourierResource {
 
 	public ResponseEntity<CourierResponseDto> fetchCourierById(int courierId) {
 
-		LOG.info("request received for fetching Couriers by Delivery Person");
+		LOG.info("request received for fetching Couriers by Delivery Person");  // logger method info
 
 		CourierResponseDto response = new CourierResponseDto();
 

@@ -1,8 +1,8 @@
 import { useLocation } from "react-router-dom";
 
 const CustomerProfile = () => {
-  const location = useLocation();
-  var fetchedCustomer = location.state; 
+  const location = useLocation();// use to get the current location of current object
+  var fetchedCustomer = location.state; // fetching current object State
 
   return (
     <div className="mt-3">

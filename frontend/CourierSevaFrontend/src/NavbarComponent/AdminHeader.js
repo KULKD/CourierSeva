@@ -5,7 +5,7 @@ import "react-toastify/dist/ReactToastify.css";
 const AdminHeader = () => {
   let navigate = useNavigate();
 
-  const user = JSON.parse(sessionStorage.getItem("active-admin"));
+  const user = JSON.parse(sessionStorage.getItem("active-admin"));//converting into a javascript object
   console.log(user);
 
   const adminLogout = () => {
@@ -20,7 +20,7 @@ const AdminHeader = () => {
     });
     sessionStorage.removeItem("active-admin");
     sessionStorage.removeItem("admin-jwtToken");
-    window.location.reload(true);
+    window.location.reload(true);// windows.location is obj which load current page by method reload
     setTimeout(() => {
       navigate("/home");
     }, 2000); 
@@ -88,7 +88,7 @@ const AdminHeader = () => {
 
       <li class="nav-item">
         <Link
-          to=""
+          to="/home"
           class="nav-link active"
           aria-current="page"
           onClick={adminLogout}

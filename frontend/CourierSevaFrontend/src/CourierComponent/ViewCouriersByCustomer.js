@@ -1,6 +1,8 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 import React from "react";
+import { NULL } from "mysql/lib/protocol/constants/types";
+
 
 const ViewCouriersByCustomer = () => {
   const customer = JSON.parse(sessionStorage.getItem("active-customer"));
@@ -16,9 +18,9 @@ const ViewCouriersByCustomer = () => {
         phoneNo: "",
       },
       receiverAddress: {
-        street: "",
-        landmark: "",
-        city: "",
+        street: " ",
+        landmark: " ",
+        city: " ",
         pincode: "",
         state: "",
         country: "",
@@ -40,15 +42,17 @@ const ViewCouriersByCustomer = () => {
   useEffect(() => {
     const getAllCouriers = async () => {
       const response = await retrieveAllCouriers();
-      if (response) {
+       console.log(response);
+      if (response!=undefined) {
         setCouriers(response.couriers);
       }
-    };
+        };
 
     getAllCouriers();
   }, []);
 
   const retrieveAllCouriers = async () => {
+    try{
     const response = await axios.get(
       "http://localhost:8080/api/courier/fetch/customer-wise?customerId=" +
         customer.id
@@ -59,15 +63,27 @@ const ViewCouriersByCustomer = () => {
       //   },
       // }
     );
+  }
+  catch(e)
+  {
+    console.log(e)
+  }
 
-    return response.data;
+  
+  
+   
+      
   };
 
   const formatDateFromEpoch = (epochTime) => {
-    const date = new Date(Number(epochTime));
-    const formattedDate = date.toLocaleString(); // Adjust the format as needed
-
+    if(epochTime == "")
+    {
+      const date = new Date(Number(epochTime));
+    const formattedDate = date.toLocaleString();
     return formattedDate;
+    } // Adjust the format as needed
+
+     
   };
 
   return (
@@ -141,15 +157,21 @@ const ViewCouriersByCustomer = () => {
 
                       <td>
                         <b>
-                          {courier.receiverAddress.street +
-                            ", " +
-                            courier.receiverAddress.city +
-                            ", " +
-                            courier.receiverAddress.pincode +
-                            ", " +
-                            courier.receiverAddress.state +
-                            ", " +
+                          
+                          
+              
+                            {
+                          courier.receiverAddress.street +""
+                             +""+
+                            courier.receiverAddress.city +""
+                             +
+                            courier.receiverAddress.pincode +""
+                             +
+                            courier.receiverAddress.state +""
+                             +
                             courier.receiverAddress.country}
+                
+                        
                         </b>
                       </td>
 

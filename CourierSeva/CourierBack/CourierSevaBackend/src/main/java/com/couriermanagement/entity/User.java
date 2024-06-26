@@ -37,11 +37,11 @@ public class User {
 	private String role;  
 
 	@OneToOne
-	@JoinColumn(name = "address_id")
+	@JoinColumn(name = "address_id")  // each user had one address
 	private Address address;
 
 	@ManyToOne
-	@JoinColumn(name = "courier_id")
+	@JoinColumn(name = "courier_id")  // many dilevry person can be managed by oen courier person
 	private User courier;    // for delivery person
 
 	private String status;

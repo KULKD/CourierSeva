@@ -7,14 +7,16 @@ import org.springframework.web.bind.annotation.RestControllerAdvice;
 
 import com.couriermanagement.dto.CommonApiResponse;
 
-@RestControllerAdvice
+@RestControllerAdvice //tell spring boot that this class handle all error
 public class GlobalExceptionHandler {
 
-	@ExceptionHandler(UserNotFoundException.class)
+	@ExceptionHandler(UserNotFoundException.class) // annotation tells that this method should handled of typed pass in bracket
 	public ResponseEntity<CommonApiResponse> handleUserNotFoundException(UserNotFoundException ex) {
 		String responseMessage = ex.getMessage();
 
-		CommonApiResponse apiResponse = CommonApiResponse.builder().responseMessage(responseMessage).isSuccess(false)
+		CommonApiResponse apiResponse = CommonApiResponse.builder()// built object of CommonAPIResponse
+				.responseMessage(responseMessage) // Set a message to response Message
+				.isSuccess(false) // set sucess method as false commomApi Response method
 				.build();
 		return new ResponseEntity<CommonApiResponse>(apiResponse, HttpStatus.INTERNAL_SERVER_ERROR);
 

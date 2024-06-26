@@ -31,7 +31,7 @@ const HomePage = () => {
               technology and a dedicated team, we aim to redefine the way you
               perceive courier services.
             </p>
-            <Link to="/courier/customer/add" className="btn bg-color custom-bg-text">
+            <Link to="/user/login"  className="btn bg-color custom-bg-text">
               Get Started
             </Link>
           </div>

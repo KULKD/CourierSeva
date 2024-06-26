@@ -24,11 +24,11 @@ public class Courier {
 	private String courierDate;
 
 	@ManyToOne
-	@JoinColumn(name = "sender_id")
+	@JoinColumn(name = "sender_id") // meaning many couriers can be sent by one user.
 	private User sender; // The customer who sent the courier package
 
 	@OneToOne
-	@JoinColumn(name = "receiver_address_id")
+	@JoinColumn(name = "receiver_address_id") // one reciever has only one address
 	private Address receiverAddress; // Address of the receiver
 
 	private String receiverName; // Name of the receiver
@@ -46,11 +46,11 @@ public class Courier {
 	private String message; // General message related to the courier, updated by Delivery Person
 
 	@ManyToOne
-	@JoinColumn(name = "delivery_person_id")
+	@JoinColumn(name = "delivery_person_id")//many courier can be delivered by one delivery person
 	private User deliveryPerson; // The delivery person who will deliver courier package
 	
 	@ManyToOne
-	@JoinColumn(name = "courier_id")
+	@JoinColumn(name = "courier_id")  // many courier can be managed by courier person
 	private User courier; // The courier login who has added Courier entry for customer to deliver
 
 }

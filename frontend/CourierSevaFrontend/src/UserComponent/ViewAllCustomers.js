@@ -52,6 +52,7 @@ const ViewAllCustomers = () => {
             <table className="table table-hover text-color text-center">
               <thead className="table-bordered border-color bg-color custom-bg-text">
                 <tr>
+                <th scope="col">Reference Id</th>
                   <th scope="col">First Name</th>
                   <th scope="col">Last Name</th>
                   <th scope="col">Email Id</th>
@@ -63,9 +64,13 @@ const ViewAllCustomers = () => {
                 {customers.map((customer) => {
                   return (
                     <tr>
+                       <td>
+                        <b>{customer.customerRefId}</b>
+                      </td>
                       <td>
                         <b>{customer.firstName}</b>
                       </td>
+                     
                       <td>
                         <b>{customer.lastName}</b>
                       </td>

@@ -30,7 +30,17 @@ const HeaderCustomer = () => {
   };
 
   return (
-    <ul class="navbar-nav ms-auto mb-2 mb-lg-0 me-5">
+    <ul class="navbar-nav ms-auto mb-2 mb-lg-0 me-5"> 
+   <li class="nav-item">
+        <Link
+          to="/courier/customer/add"
+          class="nav-link active"
+          aria-current="page"
+        >
+          <b className="text-color">Add Customer Courier</b>
+        </Link>
+      </li>
+
       <li class="nav-item">
         <Link
           to="/customer/couriers/all"

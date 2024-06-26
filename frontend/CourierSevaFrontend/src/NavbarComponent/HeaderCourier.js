@@ -67,7 +67,7 @@ const HeaderCourier = () => {
 
       <li class="nav-item">
         <Link
-          to=""
+          to="/home"
           class="nav-link active"
           aria-current="page"
           onClick={userLogout}

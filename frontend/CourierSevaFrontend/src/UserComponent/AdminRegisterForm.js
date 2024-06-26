@@ -10,7 +10,7 @@ const AdminRegisterForm = () => {
   const [registerRequest, setRegisterRequest] = useState({});
 
   const handleUserInput = (e) => {
-    setRegisterRequest({ ...registerRequest, [e.target.name]: e.target.value });
+    setRegisterRequest({ ...registerRequest, [e.target.name]: e.target.value });//creates a shallow copy of the current registerRequest state object.
   };
 
   const registerAdmin = (e) => {
